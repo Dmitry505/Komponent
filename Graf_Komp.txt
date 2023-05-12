@@ -1,0 +1,37 @@
+print("vershn")
+n = int(input())
+print("matix vesov")
+#0,1,1,0,0,1,0,1,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,1,0
+#mas = [[0,1,1,0,0],[1,0,1,0,0],[1,1,0,0,0],[0,0,0,0,1],[0,0,0,1,0]]
+#n = 5
+lis = list(map(int,input().split(',')))
+mas = [0] * n
+for i in range(n):
+    mas[i] = lis[:n]
+    lis = lis[n:]
+mt = [0] * n
+s = set()
+c = 0
+flag = 0
+for i in range (n):
+    mt[i] = [0] * n
+for i in range (n):
+    s.add(i)                         
+    for j in range(n):
+        if(mas[i][j]!= 0):
+            s.add(j)
+    for j in range (n):
+        if (mt[j][i] != 0):
+            flag = 1                  
+            x = j
+    if  (flag == 1):
+        for l in (s):
+            mt[x][l] = 1
+    else:
+        for l in (s):
+            mt[c][l] = 1 
+        c+=1 
+    flag = 0
+    s.clear()
+print(c)
+        
